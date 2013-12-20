@@ -34,6 +34,13 @@ typedef NS_ENUM(NSUInteger, KKMainLoopStage)
 {
 	@private
 	NSMutableArray* _inputObservers;
+    
+#if TARGET_OS_IPHONE
+    NSMutableArray* _touchesBeganObservers;
+    NSMutableArray* _touchesMovedObservers;
+    NSMutableArray* _touchesEndedObservers;
+    NSMutableArray* _touchesCancelledObservers;
+#endif
 	
 	NSMutableArray* _sceneUpdateObservers;
 	NSMutableArray* _sceneDidEvaluateActionsObservers;
